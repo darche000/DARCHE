@@ -117,7 +117,7 @@ export default function About() {
         {/* Contact CTA */}
         <section className="text-center">
           <div className="bg-gradient-to-r from-[#860123]/20 to-black/40 backdrop-blur-sm rounded-lg p-12 border border-white/10">
-            <h2 className="text-3xl font-bold text-white mb-6 font-mono">LET'S WORK TOGETHER</h2>
+            <h2 className="text-3xl font-bold text-white mb-6 font-mono">LET&apos;S WORK TOGETHER</h2>
             <p className="text-lg text-white/80 mb-8">
               Interested in collaborating or learning more about my work?
             </p>

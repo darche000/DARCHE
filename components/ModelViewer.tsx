@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 // TypeScript declaration for model-viewer web component
-declare global {
+declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
       'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
