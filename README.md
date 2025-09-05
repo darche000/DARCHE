@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Gallery - Responsive Masonry Grid
+
+A modern, responsive portfolio gallery built with Next.js, Tailwind CSS, and Shuffle.js. Features a masonry grid layout with randomized card ordering, tag-based filtering, and smooth animations.
+
+## Features
+
+- **Responsive Masonry Grid**: Cards with standardized width and flexible height
+- **Randomized Order**: Fisher-Yates shuffle on initial load for dynamic presentation
+- **Tag Filtering**: Clickable tag filters to show/hide specific categories
+- **Smooth Animations**: Hover effects, transitions, and staggered card animations
+- **Mobile Responsive**: Optimized for all screen sizes
+- **Lazy Loading**: Images load as needed for better performance
+
+## Tech Stack
+
+- **Next.js 15** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Shuffle.js** for masonry layout and filtering
+- **Canvas** for generating placeholder images
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Generate placeholder images** (optional):
+   ```bash
+   node scripts/generate-images.js
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser** and navigate to `http://localhost:3000`
+
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── page.tsx          # Main page component
+│   ├── layout.tsx        # Root layout
+│   └── globals.css       # Global styles
+├── components/
+│   └── Gallery.tsx       # Masonry grid component
+├── lib/
+│   └── posts.ts          # Data and utility functions
+├── public/
+│   └── images/           # Generated placeholder images
+├── scripts/
+│   └── generate-images.js # Image generation script
+└── tailwind.config.js    # Tailwind configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Gallery Component (`components/Gallery.tsx`)
+- Client-side component with Shuffle.js integration
+- Handles filtering, randomization, and responsive layout
+- Includes loading states and smooth animations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Posts Data (`lib/posts.ts`)
+- TypeScript interfaces for type safety
+- Sample portfolio data with tags and metadata
+- Utility functions for filtering and data management
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Adding New Portfolio Items
+1. Add new entries to the `posts` array in `lib/posts.ts`
+2. Include corresponding images in `public/images/`
+3. Update tags as needed
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Styling
+- Modify Tailwind classes in components
+- Add custom animations in `tailwind.config.js`
+- Update color schemes and spacing as desired
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Layout Configuration
+- Adjust Shuffle.js options in `Gallery.tsx`
+- Modify card dimensions and spacing
+- Update responsive breakpoints
 
-## Deploy on Vercel
+## Performance Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Debounced Resize**: Optimized window resize handling
+- **Lazy Loading**: Images load only when needed
+- **Efficient Filtering**: Smooth transitions between filter states
+- **Memory Management**: Proper cleanup of event listeners
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Browser Support
+
+- Modern browsers with ES6+ support
+- Responsive design works on mobile, tablet, and desktop
+- Graceful degradation for older browsers
+
+## License
+
+MIT License - feel free to use this project for your own portfolio!
