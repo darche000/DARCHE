@@ -2,15 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-// TypeScript declaration for model-viewer web component
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-    }
-  }
-}
+// ModelViewer component for displaying 3D models using @google/model-viewer
 
 interface ModelViewerProps {
   src: string
