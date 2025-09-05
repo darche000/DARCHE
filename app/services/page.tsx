@@ -1,5 +1,11 @@
 import MusicPlayer from '../../components/MusicPlayer'
 import NavLogo from '../../components/NavLogo'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Services - DARCHE",
+  description: "Architectural design, visualization, and research services by Darius Chen",
+};
 
 export default function Services() {
   const services = [
