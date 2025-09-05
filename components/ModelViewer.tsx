@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'model-viewer': any
+      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
     }
   }
 }
@@ -45,8 +45,8 @@ export default function ModelViewer({ src, alt = "3D Model", className = "", sty
         </div>
       )}
       
-      {/* @ts-ignore */}
-      <model-viewer
+              {/* @ts-expect-error - model-viewer is a custom web component */}
+        <model-viewer
         src={src}
         alt={alt}
         className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}

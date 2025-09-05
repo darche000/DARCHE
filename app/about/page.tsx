@@ -43,7 +43,7 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold text-white mb-6 font-mono">WHO I AM</h2>
               <p className="text-lg text-white/80 leading-relaxed mb-6">
-                I'm Darius Chen, a multidisciplinary creative professional specializing in architecture, 
+                I&apos;m Darius Chen, a multidisciplinary creative professional specializing in architecture, 
                 research, and digital design. With a passion for innovation and a keen eye for detail, 
                 I bridge the gap between traditional design principles and cutting-edge technology.
               </p>
@@ -104,9 +104,9 @@ export default function About() {
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-white mb-8 font-mono">PHILOSOPHY</h2>
             <blockquote className="text-2xl text-white/90 leading-relaxed italic">
-              "Design is not just about creating beautiful spaces or interfaces—it's about 
+              &ldquo;Design is not just about creating beautiful spaces or interfaces&mdash;it&apos;s about 
               understanding human behavior, solving complex problems, and creating experiences 
-              that resonate on a deeper level."
+              that resonate on a deeper level.&rdquo;
             </blockquote>
             <p className="text-lg text-white/70 mt-6">
               — Darius Chen

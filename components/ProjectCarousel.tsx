@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Post } from '@/lib/posts'
 
 interface ProjectCarouselProps {
@@ -28,7 +29,7 @@ export default function ProjectCarousel({ projectPosts, mainProject, relatedProj
     <main className="min-h-screen bg-[#860123]">
       <div className="container mx-auto max-w-[1200px] px-4 py-12">
         {/* Back Button */}
-        <a 
+        <Link 
           href="/"
           className="inline-flex items-center gap-2 text-white hover:text-gray-200 mb-8 transition-colors"
         >
@@ -36,7 +37,7 @@ export default function ProjectCarousel({ projectPosts, mainProject, relatedProj
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
           Back to Portfolio
-        </a>
+        </Link>
 
         {/* Project Header */}
         <div className="text-center mb-12">

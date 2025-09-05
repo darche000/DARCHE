@@ -53,7 +53,7 @@ export default function Contact() {
               CONTACT
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-              Let's discuss your next project and bring your vision to life
+              Let&apos;s discuss your next project and bring your vision to life
             </p>
           </div>
         </div>

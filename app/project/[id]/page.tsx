@@ -1,4 +1,4 @@
-import { posts, Post } from '@/lib/posts'
+import { posts } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import ProjectCarousel from '@/components/ProjectCarousel'
 

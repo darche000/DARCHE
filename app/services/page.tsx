@@ -229,7 +229,7 @@ export default function Services() {
           <div className="bg-gradient-to-r from-[#860123]/20 to-black/40 backdrop-blur-sm rounded-lg p-12 border border-white/10">
             <h2 className="text-3xl font-bold text-white mb-6 font-mono">READY TO START YOUR PROJECT?</h2>
             <p className="text-lg text-white/80 mb-8">
-              Let's discuss your vision and create something extraordinary together
+              Let&apos;s discuss your vision and create something extraordinary together
             </p>
             <a 
               href="/contact" 
