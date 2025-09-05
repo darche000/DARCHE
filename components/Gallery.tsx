@@ -34,7 +34,7 @@ export default function Gallery({ posts }: GalleryProps) {
           const shuffle = new Shuffle(containerRef.current, {
         itemSelector: '.card',
         gutterWidth: 0, // Remove engine-level gutters
-        columnWidth: 240,
+        columnWidth: 300,
         sizer: '.sizer' // Use dedicated sizer element
       })
 
@@ -110,7 +110,7 @@ export default function Gallery({ posts }: GalleryProps) {
 
       {/* Masonry Grid */}
       {isLoading && (
-        <div className="flex justify-center items-center py-10">
+        <div className="flex justify-center items-center py-4">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-black"></div>
         </div>
       )}
@@ -119,12 +119,12 @@ export default function Gallery({ posts }: GalleryProps) {
         className={`flex flex-wrap gap-y-4 justify-center transition-opacity duration-500 mx-auto ${isLoading ? 'opacity-0' : 'opacity-100'}`}
       >
         {/* Dedicated sizer element for consistent column width */}
-        <div className="sizer w-[240px] h-[240px] opacity-0 ml-4" aria-hidden="true"></div>        
+        <div className="sizer w-[260px] h-[240px] opacity-0 ml-4" aria-hidden="true"></div>        
         {data.map((post, index) => (
           <Link
             key={post.id}
             href={`/project/${post.projectId}`}
-            className="card w-[240px] m-2 overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
+            className="card w-[260px] m-2 overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
             data-groups={JSON.stringify(post.tags)}
             style={{ animationDelay: `${index * 50}ms` }}
           >
