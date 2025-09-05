@@ -13,6 +13,16 @@ export default function Home() {
     <main className="min-h-screen bg-[#860123]">
       {/* Music Player */}
       <MusicPlayer />
+      
+      {/* Scrolling Banner */}
+      <div className="relative w-full bg-[#860123] border-b border-black/20 overflow-hidden">
+        <div className="flex whitespace-nowrap animate-scroll">
+          <div className="text-black text-sm py-1 px-4" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>
+            TRACK THE PROGRESS OF MY RESEARCH AND DESIGN WORK FOR MY MASTERS PROGRAM IN THE BLOG SECTION. FOLLOW MY JOURNEY THROUGH PARAMETRIC ARCHITECTURE, URBAN DESIGN COMPETITIONS, AND SPECULATIVE DESIGN METHODOLOGIES. DISCOVER INSIGHTS INTO COMPUTATIONAL DESIGN PROCESSES, RESEARCH METHODOLOGIES, AND INNOVATIVE APPROACHES TO ARCHITECTURAL VISUALIZATION AND SPATIAL ANALYSIS.
+          </div>
+        </div>
+      </div>
+      
       {/* Hero Section - Full Bleed Image with 3D Model Overlay */}
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background Image */}

@@ -9,7 +9,7 @@
   
   /* Font Variables - Geist-inspired system fonts */
   --font-geist: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-  --font-geist-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
+  --font-geist-mono: 'IBM Plex Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
 }
 
 @theme inline {
@@ -36,4 +36,18 @@ body {
 
 .shuffle-container {
   margin: 0 auto; /* centers the entire grid */
+}
+
+/* Scrolling Banner Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
