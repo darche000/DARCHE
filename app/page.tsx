@@ -3,6 +3,7 @@ import { getAllPosts } from '../lib/posts'
 import ScrollPrompt from '../components/ScrollPrompt'
 import ModelViewer from '../components/ModelViewer'
 import GlitchTransition from '../components/GlitchTransition'
+import GlitchWord from '../components/GlitchWord'
 import MusicPlayer from '../components/MusicPlayer'
 
 export default function Home() {
@@ -63,9 +64,10 @@ export default function Home() {
                     <GlitchTransition />
                   </h1>
                 </div>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Explore my creative work across architecture, research, branding, and more. 
-                Scroll down to browse by category.
+              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed group cursor-pointer transition-all duration-500 hover:text-white hover:scale-105 hover:drop-shadow-2xl animate-fade-in-up">
+                <GlitchWord glitchText="DISCOVER">Explore</GlitchWord> my creative work across <GlitchWord glitchText="BUILDINGS">architecture</GlitchWord>, <GlitchWord glitchText="STUDY">research</GlitchWord>, <GlitchWord glitchText="IDENTITY">branding</GlitchWord>, and more. 
+                <br />
+                <GlitchWord glitchText="NAVIGATE" className="hover:text-[#ff6b6b]">Scroll down</GlitchWord> to browse by category.
               </p>
             </div>
           </div>

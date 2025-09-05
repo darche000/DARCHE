@@ -45,7 +45,7 @@ const MusicPlayer = () => {
   }
 
   return (
-    <div className="fixed top-4 right-4 z-50 bg-black/80 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+    <div className="fixed top-8 right-4 z-50 bg-black/40 backdrop-blur-sm rounded-lg p-3 shadow-lg">
       <audio
         ref={audioRef}
         src={musicSrc}
