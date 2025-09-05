@@ -14,20 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link 
-          rel="preload" 
-          href="/fonts/LibertinusSerif-Regular.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous"
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/LibertinusSerifDisplay-Regular.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous"
-        />
+        {/* Using system fonts - no preload needed */}
       </head>
       <body className="antialiased">
         {children}
