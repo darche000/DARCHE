@@ -130,12 +130,12 @@ export default function Gallery({ posts }: GalleryProps) {
         className={`flex flex-wrap gap-y-4 justify-center transition-opacity duration-500 mx-auto ${isLoading ? 'opacity-0' : 'opacity-100'}`}
       >
         {/* Dedicated sizer element for consistent column width */}
-        <div className="sizer w-[130px] sm:w-[260px] h-[240px] opacity-0 ml-4" aria-hidden="true"></div>        
+        <div className="sizer w-[130px] sm:w-[260px] h-[180px] sm:h-[240px] opacity-0 ml-4" aria-hidden="true"></div>        
         {data.map((post, index) => (
           <Link
             key={post.id}
             href={`/project/${post.projectId}`}
-            className="card w-[130px] sm:w-[260px] overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
+            className="card w-[130px] sm:w-[260px] mb-4 overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
             data-groups={JSON.stringify(post.tags)}
             style={{ animationDelay: `${index * 50}ms` }}
           >
@@ -150,8 +150,8 @@ export default function Gallery({ posts }: GalleryProps) {
               <div className="absolute inset-0 bg-red bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 rounded-lg"></div>
             </div>
             <div className="p-2">
-              <h3 className="font-semibold text-white mb-1 text-sm">{post.title}</h3>
-              <div className="flex flex-wrap gap-1">
+              <h3 className="font-semibold text-white mb-1 text-sm sm:text-sm text-xs">{post.title}</h3>
+              <div className="hidden sm:flex flex-wrap gap-1">
                 {post.tags.map((tag) => (
                   <span 
                     key={tag}
@@ -161,7 +161,7 @@ export default function Gallery({ posts }: GalleryProps) {
                   </span>
                 ))}
               </div>
-              <p className="text-gray-50 text-xs mt-1">{post.date}</p>
+              <p className="text-gray-50 text-xs sm:text-xs text-[10px] mt-1">{post.date}</p>
             </div>
           </Link>
         ))}
