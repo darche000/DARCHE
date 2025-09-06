@@ -31,18 +31,29 @@ export default function Gallery({ posts }: GalleryProps) {
   useEffect(() => {
     if (!containerRef.current) return
 
-          const shuffle = new Shuffle(containerRef.current, {
-        itemSelector: '.card',
-        gutterWidth: 0, // Remove engine-level gutters
-        columnWidth: 300,
-        sizer: '.sizer' // Use dedicated sizer element
-      })
+    // Calculate responsive column width
+    const getColumnWidth = () => {
+      if (window.innerWidth < 560) {
+        return 160 // For 2 columns on mobile (280px total width with margins)
+      }
+      return 300 // Default width for larger screens
+    }
+
+    const shuffle = new Shuffle(containerRef.current, {
+      itemSelector: '.card',
+      gutterWidth: 0, // Remove engine-level gutters
+      columnWidth: getColumnWidth(),
+      sizer: '.sizer' // Use dedicated sizer element
+    })
 
     setShuffleInstance(shuffle)
     setIsLoading(false)
 
     // Handle resize events
     const onResize = () => {
+      // Update column width on resize
+      const newColumnWidth = getColumnWidth()
+      shuffle.options.columnWidth = newColumnWidth
       shuffle.update()
     }
 
@@ -119,12 +130,12 @@ export default function Gallery({ posts }: GalleryProps) {
         className={`flex flex-wrap gap-y-4 justify-center transition-opacity duration-500 mx-auto ${isLoading ? 'opacity-0' : 'opacity-100'}`}
       >
         {/* Dedicated sizer element for consistent column width */}
-        <div className="sizer w-[260px] h-[240px] opacity-0 ml-4" aria-hidden="true"></div>        
+        <div className="sizer w-[130px] sm:w-[260px] h-[240px] opacity-0 ml-4" aria-hidden="true"></div>        
         {data.map((post, index) => (
           <Link
             key={post.id}
             href={`/project/${post.projectId}`}
-            className="card w-[260px] m-2 overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
+            className="card w-[130px] sm:w-[260px] overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
             data-groups={JSON.stringify(post.tags)}
             style={{ animationDelay: `${index * 50}ms` }}
           >
