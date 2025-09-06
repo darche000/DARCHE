@@ -33,8 +33,12 @@ export default function Gallery({ posts }: GalleryProps) {
 
     // Calculate responsive column width
     const getColumnWidth = () => {
-      if (window.innerWidth < 560) {
-        return 160 // For 2 columns on mobile (280px total width with margins)
+      if (window.innerWidth < 320) {
+        return 180 // For very small screens
+      } else if (window.innerWidth < 430) {
+        return 240 // For medium-small screens (320-430px)
+      } else if (window.innerWidth < 560) {
+        return 240 // For small screens (430-560px)
       }
       return 300 // Default width for larger screens
     }
@@ -136,8 +140,11 @@ export default function Gallery({ posts }: GalleryProps) {
             key={post.id}
             href={`/project/${post.projectId}`}
             className="card w-[130px] sm:w-[260px] mb-4 overflow-hidden rounded-lg bg-[#78172b] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer animate-fade-in block"
+            style={{ 
+              width: window.innerWidth >= 320 && window.innerWidth < 430 ? '150px' : undefined,
+              animationDelay: `${index * 50}ms`
+            }}
             data-groups={JSON.stringify(post.tags)}
-            style={{ animationDelay: `${index * 50}ms` }}
           >
             <div className="relative overflow-hidden">
               <img 
